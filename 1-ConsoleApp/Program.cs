@@ -8,7 +8,7 @@ namespace MyConsoleApp
         static async Task Main(string[] args)
         {
             var counter = 0;
-            while (counter < 5)
+            while (counter < 12)
             {
                 Console.WriteLine($"Counter: {++counter}");
                 await Task.Delay(500);
