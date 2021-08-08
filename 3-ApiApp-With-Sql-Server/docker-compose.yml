@@ -1,0 +1,10 @@
+version: "3"
+services:
+  api-service:
+    container_name: web-api-service
+    ports:
+      - 5000:80
+      - 5001:80
+    build: .
+# volumes:
+# networks:
