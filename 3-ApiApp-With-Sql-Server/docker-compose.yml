@@ -1,10 +1,19 @@
 version: "3"
 services:
-  api-service:
-    container_name: web-api-service
+  web-api:
+    # container_name: web-api
     ports:
       - 5000:80
       - 5001:80
     build: .
+    depends_on:
+      - db-sql-server
+  db-sql-server:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      SA_PASSWORD: "Aa123456"
+      ACCEPT_EULA: "Y"
+    ports:
+      - 1433:1433
 # volumes:
 # networks:
