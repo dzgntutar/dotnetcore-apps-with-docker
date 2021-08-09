@@ -8,6 +8,8 @@ services:
     build: .
     depends_on:
       - db-sql-server
+    links:
+      - db-sql-server
   db-sql-server:
     image: "mcr.microsoft.com/mssql/server"
     environment:

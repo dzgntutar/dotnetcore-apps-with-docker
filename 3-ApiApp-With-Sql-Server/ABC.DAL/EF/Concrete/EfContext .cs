@@ -1,26 +1,19 @@
-// using System;
-// using System.Collections.Generic;
-// using System.Text;
-// using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using ABC.DAL.EF.Concrete.Mapping;
+using ABC.Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 
-// namespace Ttar.DAL.Concrete
-// {
-//     public class EfContext : DbContext
-//     {
-//         public DbSet<Category> Categories { get; set; }
+namespace Ttar.DAL.Concrete
+{
+    public class EfContext : DbContext
+    {
+        public DbSet<Company> Companies { get; set; }
 
-//         protected override void OnConfiguring(
-//             DbContextOptionsBuilder optionsBuilder
-//         )
-//         {
-//             //optionsBuilder.UseSqlite("Data Source=test.db");
-//             base.OnConfiguring(optionsBuilder);
-//         }
-
-//         protected override void OnModelCreating(ModelBuilder modelBuilder)
-//         {
-//             modelBuilder.ApplyConfiguration(new CategoryMap());
-//             base.OnModelCreating(modelBuilder);
-//         }
-//     }
-// }
+        public EfContext(DbContextOptions<EfContext> options) : base(options)
+        {
+            this.Database.EnsureCreated();
+        }
+    }
+}

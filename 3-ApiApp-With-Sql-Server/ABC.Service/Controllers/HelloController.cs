@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ABC.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Ttar.DAL.Concrete;
 
 namespace ABC.Service.Controllers
 {
@@ -11,13 +13,22 @@ namespace ABC.Service.Controllers
     [Route("[controller]")]
     public class HelloController : ControllerBase
     {
-        [HttpGet]
-        public Hello Get()
+        private readonly EfContext _dbContext;
+        public HelloController(EfContext dbContext)
         {
-            var hello = new Hello();
-            hello.Message = "Hi";
-            hello.Message2 = "How are you";
-            return  hello;
+            _dbContext = dbContext;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<Company>> Get()
+        {
+            Company company = new();
+            //company.Id = 1;
+            company.Name = "selam";
+            _dbContext.Companies.Add(company);
+            _dbContext.SaveChanges();
+
+            return  Ok(company);
         }
     }
 }
