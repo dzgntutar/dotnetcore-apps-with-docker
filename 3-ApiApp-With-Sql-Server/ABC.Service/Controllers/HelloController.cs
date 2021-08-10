@@ -20,11 +20,10 @@ namespace ABC.Service.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<Company>> Get()
+        public ActionResult<Company> Get()
         {
             Company company = new();
-            //company.Id = 1;
-            company.Name = "selam";
+            company.Name = "OBSS Teknoloji";
             _dbContext.Companies.Add(company);
             _dbContext.SaveChanges();
 

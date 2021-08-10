@@ -15,5 +15,11 @@ namespace Ttar.DAL.Concrete
         {
             this.Database.EnsureCreated();
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new CompanyMap());
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
