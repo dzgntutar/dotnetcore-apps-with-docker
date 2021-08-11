@@ -4,7 +4,5 @@ WORKDIR /App
 RUN dotnet build
 RUN dotnet restore
 WORKDIR /App/ABC.Service
-ENV ASPNETCORE_URLS=http://+:80  
-EXPOSE 80
 RUN dotnet publish -c Release -o out
 ENTRYPOINT ["dotnet", "./out/ABC.Service.dll"]

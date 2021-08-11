@@ -5,6 +5,8 @@ services:
     ports:
       - 5000:80
       - 5001:80
+    environment:
+      - ASPNETCORE_URLS=http://+:80
     build: .
     depends_on:
       - db-sql-server
