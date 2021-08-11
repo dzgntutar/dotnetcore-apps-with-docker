@@ -1,4 +1,4 @@
-using ABC.Entities.Concrete;
+using ABC.Entity.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

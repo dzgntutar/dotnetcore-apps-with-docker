@@ -1,8 +1,6 @@
-using ABC.Core.Entities;
-
-namespace ABC.Entity.Concrete
+namespace ABC.Entity.Dto
 {
-    public class Company : IEntity
+    public class CompanyDto
     {
         public int Id { get; set; }
 
