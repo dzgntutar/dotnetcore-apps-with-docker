@@ -23,8 +23,8 @@ namespace ABC.Service.Controllers
         [HttpGet]
         public ActionResult Get()
         {
-            companyManager.AddCompany(new CompanyDto() { Name = "AA", Address = "BB" });
-            return Ok("Company");
+            var company = companyManager.AddCompany(new CompanyDto() { Name = "AA", Address = "BB" });
+            return Created("wwwwww", company);
         }
     }
 }
