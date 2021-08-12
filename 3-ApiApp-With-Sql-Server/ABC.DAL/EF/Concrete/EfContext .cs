@@ -11,7 +11,13 @@ namespace Ttar.DAL.Concrete
     {
         public DbSet<Company> Companies { get; set; }
 
-        public EfContext(DbContextOptions<EfContext> options) : base(options)
+        public EfContext()
+        {
+
+        }
+
+        public EfContext(DbContextOptions<EfContext> options) :
+            base(options)
         {
             this.Database.EnsureCreated();
         }

@@ -1,4 +1,5 @@
-﻿using ABC.Entity.Concrete;
+﻿using ABC.Core.DAL;
+using ABC.Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;

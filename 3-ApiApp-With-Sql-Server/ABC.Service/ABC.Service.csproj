@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -9,8 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ABC.DAL\ABC.DAL.csproj" />
     <ProjectReference Include="..\ABC.Entity\ABC.Entity.csproj" />
+    <ProjectReference Include="..\ABC.Business\ABC.Business.csproj" />
+    <ProjectReference Include="..\ABC.DAL\ABC.DAL.csproj" />
   </ItemGroup>
 
 </Project>

@@ -11,7 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABC.DAL", "ABC.DAL\ABC.DAL.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABC.Core", "ABC.Core\ABC.Core.csproj", "{DB7F4EEC-4CCD-4235-BE7A-09F3B5B7F262}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABC.Business", "ABC.Business\ABC.Business.csproj", "{24F14421-19A2-412C-A037-FD796704094A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ABC.Business", "ABC.Business\ABC.Business.csproj", "{24F14421-19A2-412C-A037-FD796704094A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EEA5554F-1E9A-4814-8E07-B1E326C06220}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+		note.txt = note.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

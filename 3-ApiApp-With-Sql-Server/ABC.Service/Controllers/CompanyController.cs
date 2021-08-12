@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ABC.Entity.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Ttar.DAL.Concrete;
 
 namespace ABC.Service.Controllers
 {
@@ -18,7 +16,7 @@ namespace ABC.Service.Controllers
         }
 
         [HttpGet]
-        public ActionResult<Company> Get()
+        public ActionResult Get()
         {
             return Ok("company");
         }
