@@ -13,13 +13,12 @@ namespace Ttar.DAL.Concrete
 
         public EfContext()
         {
-
         }
 
-        public EfContext(DbContextOptions<EfContext> options) :
-            base(options)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            this.Database.EnsureCreated();
+            optionsBuilder.UseSqlServer("Server=db-sql-server;Database=Kariyer;User Id=sa;Password=Aa123456");
+            base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ABC.DAL.Abstract
 {
-    interface ICompanyDal : IRepository<Company>
+    public interface ICompanyDal : IRepository<Company>
     {
     }
 }

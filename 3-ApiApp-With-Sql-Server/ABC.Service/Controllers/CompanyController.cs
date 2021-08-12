@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ABC.Business.Abstract;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ABC.Entity.Dto;
 
 namespace ABC.Service.Controllers
 {
@@ -11,14 +13,18 @@ namespace ABC.Service.Controllers
     [Route("[controller]")]
     public class CompanyController : ControllerBase
     {
-        public CompanyController()
+        ICompanyManager companyManager;
+
+        public CompanyController(ICompanyManager companyManager)
         {
+            this.companyManager = companyManager;
         }
 
         [HttpGet]
         public ActionResult Get()
         {
-            return Ok("company");
+            companyManager.AddCompany(new CompanyDto() { Name = "AA", Address = "BB" });
+            return Ok("Company");
         }
     }
 }

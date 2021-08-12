@@ -10,7 +10,7 @@ using Ttar.DAL.Concrete;
 
 namespace ABC.DAL.EF.Concrete
 {
-    public  class CompanyDal : EfRepository<Company,EfContext>
+    public  class CompanyDal : EfRepository<Company,EfContext>,ICompanyDal
     {
     }
 }

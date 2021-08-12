@@ -6,14 +6,14 @@ namespace ABC.Business.Abstract
 {
     public interface ICompanyManager
     {
-        List<CompanyDto> GetAllCategory();
+        List<CompanyDto> GetAllCompany();
 
-        bool DeleteCategory(CompanyDto category);
+        bool DeleteCompany(CompanyDto company);
 
-        CompanyDto AddCategory(CompanyDto category);
+        CompanyDto AddCompany(CompanyDto company);
 
-        CompanyDto GetSingleCategory(int id);
+        CompanyDto GetSingleCompany(int id);
 
-        CompanyDto UpdateCategory(CompanyDto category);
+        CompanyDto UpdateCompany(CompanyDto company);
     }
 }
