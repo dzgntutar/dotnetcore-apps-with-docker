@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using ABC.Entity.Dto;
 
-namespace ABC.Business.Abstract
+namespace ABC.Service.Abstract
 {
-    public interface ICompanyManager
+    public interface ICompanyService
     {
         List<CompanyDto> GetAllCompany();
 

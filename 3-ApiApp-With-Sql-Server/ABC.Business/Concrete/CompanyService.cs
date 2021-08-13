@@ -1,16 +1,16 @@
-using ABC.Business.Abstract;
 using ABC.Entity.Dto;
 using System.Collections.Generic;
 using ABC.DAL.Abstract;
 using ABC.Entity.Concrete;
+using ABC.Service.Abstract;
 
-namespace ABC.Business.Concrete
+namespace ABC.Service.Concrete
 {
-    public class CompanyManager : ICompanyManager
+    public class CompanyService : ICompanyService
     {
         ICompanyDal companyDal;
 
-        public CompanyManager(ICompanyDal _companyDal)
+        public CompanyService(ICompanyDal _companyDal)
         {
             companyDal = _companyDal;
         }

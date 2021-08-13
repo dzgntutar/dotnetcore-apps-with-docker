@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ABC.Business.Abstract;
-using ABC.Business.Concrete;
+using ABC.Service.Abstract;
+using ABC.Service.Concrete;
 using ABC.DAL.Abstract;
 using ABC.DAL.EF.Concrete;
 using Microsoft.AspNetCore.Builder;
@@ -34,7 +34,7 @@ namespace ABC.Service
             //services.AddDbContext<EfContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
 
             services.AddScoped<ICompanyDal, CompanyDal>();
-            services.AddScoped<ICompanyManager, CompanyManager>();
+            services.AddScoped<ICompanyService, CompanyService>();
 
         }
 
