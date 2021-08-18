@@ -3,6 +3,6 @@ COPY . App/
 WORKDIR /App
 RUN dotnet build
 RUN dotnet restore
-WORKDIR /App/ABC.Service
+WORKDIR /App/ABC.Api
 RUN dotnet publish -c Release -o out
-ENTRYPOINT ["dotnet", "./out/ABC.Service.dll"]
+ENTRYPOINT ["dotnet", "./out/ABC.Api.dll"]
