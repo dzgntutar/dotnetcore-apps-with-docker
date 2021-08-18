@@ -8,7 +8,7 @@ namespace ABC.Service.Abstract
     {
         List<CompanyDto> GetAllCompany();
 
-        bool DeleteCompany(CompanyDto company);
+        void DeleteCompany(CompanyDto company);
 
         CompanyDto AddCompany(CompanyDto company);
 

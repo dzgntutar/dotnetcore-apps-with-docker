@@ -24,9 +24,9 @@ namespace ABC.Service.Concrete
             return new CompanyDto() { Id = addedCompany.Id };
         }
 
-        public bool DeleteCompany(CompanyDto company)
+        public void DeleteCompany(CompanyDto company)
         {
-            throw new System.NotImplementedException();
+            companyDal.Delete(new Company { Id = company.Id, Name = company.Name, Address = company.Address });
         }
 
         public List<CompanyDto> GetAllCompany()
@@ -45,12 +45,14 @@ namespace ABC.Service.Concrete
             var company = companyDal.Get(x => x.Id == id);
             if (company == null)
                 return null;
-            return new CompanyDto(){ Id = company.Id,Name =company.Name,Address= company.Address};
+            return new CompanyDto() { Id = company.Id, Name = company.Name, Address = company.Address };
         }
 
         public CompanyDto UpdateCompany(CompanyDto company)
         {
-            throw new System.NotImplementedException();
+            return null;
         }
+
     }
+
 }

@@ -48,5 +48,12 @@ namespace ABC.Api.Controllers
         {
             return NoContent();
         }
+
+        [HttpDelete("{id}")]
+        public void Delete(CompanyDto company )
+        {
+            companyService.DeleteCompany(company);
+        }
+
     }
 }
