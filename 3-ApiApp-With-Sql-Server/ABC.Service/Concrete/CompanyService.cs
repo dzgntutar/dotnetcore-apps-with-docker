@@ -43,6 +43,8 @@ namespace ABC.Service.Concrete
         public CompanyDto GetSingleCompany(int id)
         {
             var company = companyDal.Get(x => x.Id == id);
+            if (company == null)
+                return null;
             return new CompanyDto(){ Id = company.Id,Name =company.Name,Address= company.Address};
         }
 
