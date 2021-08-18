@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ABC.DAL.Abstract;
 using ABC.Entity.Concrete;
 using ABC.Service.Abstract;
+using System.Linq;
 
 namespace ABC.Service.Concrete
 {
@@ -30,12 +31,19 @@ namespace ABC.Service.Concrete
 
         public List<CompanyDto> GetAllCompany()
         {
-            throw new System.NotImplementedException();
+            var companies = companyDal.GetList();
+            return companies.Select(x => new CompanyDto
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Address = x.Address
+            }).ToList();
         }
 
         public CompanyDto GetSingleCompany(int id)
         {
-            throw new System.NotImplementedException();
+            var company = companyDal.Get(x => x.Id == id);
+            return new CompanyDto(){ Id = company.Id,Name =company.Name,Address= company.Address};
         }
 
         public CompanyDto UpdateCompany(CompanyDto company)
