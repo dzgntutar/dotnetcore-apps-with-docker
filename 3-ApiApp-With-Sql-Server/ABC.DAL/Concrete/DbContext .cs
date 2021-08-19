@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using ABC.DAL.EF.Concrete.Mapping;
+using ABC.DAL.Concrete.Mapping;
 using ABC.Entity.Concrete;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ttar.DAL.Concrete
 {
-    public class EfContext : DbContext
+    public class DbContext : Microsoft.EntityFrameworkCore.DbContext
     {
         public DbSet<Company> Companies { get; set; }
 
-        public EfContext()
+        public DbContext()
         {
         }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ABC.Core.Service;
 using ABC.Entity.Dto;
 using ABC.Service.Abstract;
 using Microsoft.AspNetCore.Mvc;
@@ -13,23 +14,23 @@ namespace ABC.Api.Controllers
     [Route("[controller]")]
     public class CompaniesController : ControllerBase
     {
-        ICompanyService companyService;
+        IService<CompanyDto> service;
 
         public CompaniesController(ICompanyService companyService)
         {
-            this.companyService = companyService;
+            this.service = companyService;
         }
 
         [HttpGet]
         public ActionResult Get()
         {
-            return Ok(companyService.GetAllCompany());
+            return Ok(service.GetAll());
         }
 
         [HttpGet("{id}")]
         public ActionResult Get(int id)
         {
-            var company = companyService.GetSingleCompany(id);
+            var company = service.GetSingle(id);
             if (company == null)
                 return NotFound();
             else
@@ -39,7 +40,7 @@ namespace ABC.Api.Controllers
         [HttpPost]
         public ActionResult Post(CompanyDto company)
         {
-            var addedCompany = companyService.AddCompany(company);
+            var addedCompany = service.Add(company);
             return Created("www", addedCompany);
         }
 
@@ -48,7 +49,7 @@ namespace ABC.Api.Controllers
         {
             try
             {
-                var companyUpdate = companyService.UpdateCompany(company);
+                var companyUpdate = service.Update(company);
 
 
                 return Ok(companyUpdate);
@@ -65,7 +66,7 @@ namespace ABC.Api.Controllers
         {
             try
             {
-                companyService.DeleteCompany(company);
+                service.Delete(company);
                 return Ok();
             }
             catch (Exception)

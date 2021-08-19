@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using ABC.Service.Abstract;
 using ABC.Service.Concrete;
 using ABC.DAL.Abstract;
-using ABC.DAL.EF.Concrete;
+using ABC.DAL.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

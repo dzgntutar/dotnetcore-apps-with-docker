@@ -6,9 +6,9 @@ using System.Linq.Expressions;
 using System.Text;
 using ABC.Core.Entities;
 
-namespace ABC.Core.DAL.EntityFramework
+namespace ABC.Core.DAL
 {
-    public class EfRepository<TEntity, TContext> : IRepository<TEntity>
+    public class Repository<TEntity, TContext> : IRepository<TEntity>
          where TEntity : class, IEntity,new()
          where TContext : DbContext, new()
     {

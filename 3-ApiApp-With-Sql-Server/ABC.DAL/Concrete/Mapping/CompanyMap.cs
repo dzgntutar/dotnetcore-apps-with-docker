@@ -2,7 +2,7 @@ using ABC.Entity.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ABC.DAL.EF.Concrete.Mapping
+namespace ABC.DAL.Concrete.Mapping
 {
     public class CompanyMap : IEntityTypeConfiguration<Company>
     {
