@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ABC.Core.Service;
-using ABC.Entity.Dto;
+using ABC.Entity.Concrete;
 using ABC.Service.Abstract;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,7 +14,7 @@ namespace ABC.Api.Controllers
     [Route("[controller]")]
     public class CompaniesController : ControllerBase
     {
-        IService<CompanyDto> service;
+        IService<Company> service;
 
         public CompaniesController(ICompanyService companyService)
         {
@@ -38,31 +38,28 @@ namespace ABC.Api.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post(CompanyDto company)
+        public ActionResult Post(Company company)
         {
-            var addedCompany = service.Add(company);
-            return Created("www", addedCompany);
+            service.Add(company);
+            return Created("www", company);
         }
 
         [HttpPut]
-        public ActionResult Update(CompanyDto company)
+        public ActionResult Update(Company company)
         {
             try
             {
-                var companyUpdate = service.Update(company);
-
-
-                return Ok(companyUpdate);
+                service.Update(company);
+                return Ok(company);
             }
             catch (Exception)
             {
                 return BadRequest();
             }
-            
         }
 
         [HttpDelete]
-        public ActionResult Delete(CompanyDto company )
+        public ActionResult Delete(Company company )
         {
             try
             {
