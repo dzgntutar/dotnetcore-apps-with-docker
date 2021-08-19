@@ -46,13 +46,32 @@ namespace ABC.Api.Controllers
         [HttpPut]
         public ActionResult Update(CompanyDto company)
         {
-            return NoContent();
+            try
+            {
+                var companyUpdate = companyService.UpdateCompany(company);
+
+
+                return Ok(companyUpdate);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+            
         }
 
-        [HttpDelete("{id}")]
-        public void Delete(CompanyDto company )
+        [HttpDelete]
+        public ActionResult Delete(CompanyDto company )
         {
-            companyService.DeleteCompany(company);
+            try
+            {
+                companyService.DeleteCompany(company);
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
 
     }

@@ -50,7 +50,14 @@ namespace ABC.Service.Concrete
 
         public CompanyDto UpdateCompany(CompanyDto company)
         {
-            return null;
+            var updatedCompany = companyDal.Update(new Company { Id = company.Id, Name = company.Name, Address = company.Address });
+
+            return new CompanyDto
+            {
+                Id = updatedCompany.Id,
+                Name = updatedCompany.Name,
+                Address = updatedCompany.Address
+            };
         }
 
     }
